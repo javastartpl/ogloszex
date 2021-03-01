@@ -1,8 +1,9 @@
 package pl.javastart.restoffers.category;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import pl.javastart.restoffers.offer.NoCategoryException;
+import pl.javastart.restoffers.offer.OfferDto;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,11 +13,29 @@ import java.util.stream.Collectors;
 @RestController
 public class CategoryRestController {
 
-    @GetMapping("/names")
-    public List<String> categoryNames() {
-        return Arrays.stream(Category.values())
-                .map(Category::getDisplayName)
-                .collect(Collectors.toList());
+    private final CategoryService categoryService;
+
+    public CategoryRestController(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 
+    @GetMapping("/names")
+    public List<String> categoryNames() {
+        return categoryService.findAllNames();
+    }
+
+    @GetMapping("")
+    public List<CategoryDto> findAll() {
+        return categoryService.findAll();
+    }
+
+    @PostMapping("")
+    public CategoryDto addOffer(@RequestBody CategoryDto categoryDto) {
+        return categoryService.insert(categoryDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        categoryService.deleteCategory(id);
+    }
 }

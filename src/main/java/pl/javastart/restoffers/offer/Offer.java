@@ -20,7 +20,7 @@ public class Offer {
 
     private BigDecimal price;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
     private Category category;
 
     public Long getId() {
