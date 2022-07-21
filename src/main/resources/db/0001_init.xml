@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+
+    <changeSet id="0001_init" author="javastart">
+
+        <createTable tableName="category">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="name" type="varchar(255)" />
+            <column name="description" type="varchar(255)" />
+        </createTable>
+
+        <createTable tableName="offer">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="title" type="varchar(255)" />
+            <column name="description" type="varchar(255)" />
+            <column name="img_url" type="varchar(255)" />
+            <column name="price" type="decimal(11,2)" />
+            <column name="category_id" type="bigint">
+                <constraints foreignKeyName="fk_offer_category_id"
+                             referencedTableName="category"
+                             referencedColumnNames="id" />
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
