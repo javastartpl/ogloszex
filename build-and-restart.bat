@@ -1,4 +1,3 @@
-call mvn clean package
 docker build . -t ogloszex
 docker stop ogloszex
 docker rm ogloszex
