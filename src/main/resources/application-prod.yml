@@ -1,5 +1,5 @@
 spring:
-    datasource:0
+    datasource:
         url: jdbc:mysql://80.211.250.27/ogloszex?useSSL=false&allowPublicKeyRetrieval=true
         driver-class-name: com.mysql.cj.jdbc.Driver
         username: root
