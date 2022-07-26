@@ -1,0 +1,8 @@
+spring:
+    datasource:
+        url: jdbc:mysql://80.211.250.27:3306/ogloszex
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: ogloszex
+        password: tajnehaslo
+    liquibase:
+        contexts: prod
