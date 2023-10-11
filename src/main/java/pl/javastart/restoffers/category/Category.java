@@ -2,7 +2,7 @@ package pl.javastart.restoffers.category;
 
 import pl.javastart.restoffers.offer.Offer;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Set;
 
 

@@ -2,7 +2,7 @@ package pl.javastart.restoffers.offer;
 
 import pl.javastart.restoffers.category.Category;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity

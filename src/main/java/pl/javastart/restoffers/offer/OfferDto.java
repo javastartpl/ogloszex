@@ -1,6 +1,6 @@
 package pl.javastart.restoffers.offer;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 public class OfferDto {

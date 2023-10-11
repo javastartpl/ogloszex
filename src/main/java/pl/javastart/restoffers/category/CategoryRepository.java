@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
     Optional<Category> findByName(String category);
 
-    @Query("SELECT new pl.javastart.restoffers.category.CategoryDto(c.name, c.description, c.offers.size)" +
+    @Query("SELECT new pl.javastart.restoffers.category.CategoryDto(c.name, c.description, SIZE(c.offers))" +
             "FROM Category c")
     List<CategoryDto> findAllWithCount();
 

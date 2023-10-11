@@ -6,6 +6,10 @@ VALUES
 (4, 'Moto', 'Samochody, skutery i ciężarówki')
 ;
 
+-- ALTER TABLE `category`
+-- ALTER column `id`
+-- START WITH 5 RESTART;
+
 INSERT INTO offer(title, description, price, category_id, img_url)
 VALUES
 ('Telewizor Samsung', 'Super TV', 2499.90, 2, 'https://images.samsung.com/is/image/samsung/au-n5300-ua32n5300awxxy-frontblack-173631427?$720_576_PNG$'),
