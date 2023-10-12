@@ -3,8 +3,8 @@ package pl.javastart.restoffers.category;
 import pl.javastart.restoffers.offer.Offer;
 
 import jakarta.persistence.*;
-import java.util.Set;
 
+import java.util.Set;
 
 @Entity
 public class Category {
